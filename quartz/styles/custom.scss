@@ -56,7 +56,9 @@ a.internal { background: none; }
 }
 .callout-title, .callout-title p { color: var(--ink) !important; }
 .callout > .callout-title { padding: 0; margin: 0 0 var(--space-2); }
+.callout > .callout-title .callout-title-inner > p { margin: 0; }
 .callout > .callout-content { padding: 0; margin: 0; }
+.callout > .callout-content > :first-child { margin-top: 0; }
 .callout > .callout-content > :last-child { margin-bottom: 0; }
 .callout-icon { display: none; }
 pre { background: var(--surface-1); border-color: var(--line); }
