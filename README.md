@@ -33,3 +33,5 @@ GitHub Discussions and the Announcements category are wired to Giscus with pathn
 Quartz 5's `note-properties` transformer is required to parse frontmatter (its view is hidden). The alias-redirects 1.0.0 plugin would overwrite the TEST post with a redirect to itself because its alias normalizes to its canonical slug. `fix-alias-redirects.mjs`, run by npm's postinstall hook, applies the minimal self-redirect guard to both normal and incremental alias emission without changing any note.
 
 `quartz.config.yaml` owns plugin/layout settings; `quartz.ts` applies the environment URL override and adds the small theme/metadata components. `quartz/components/Head.tsx` loads the vendored token stylesheet and non-deferred switcher. `quartz/styles/custom.scss` adapts Quartz to NTRN. The canonical notes remain unchanged.
+
+The NTRN adaptation explicitly colors native scrollbars from surface/line tokens and uses compact callout title/content spacing. Explorer populates asynchronously from the content index; screenshot automation must wait for its two note links, as an early page-load capture can show an empty list in either theme.
