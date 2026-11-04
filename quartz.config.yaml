@@ -1,0 +1,116 @@
+configuration:
+  pageTitle: TEST hosting trial
+  pageTitleSuffix: ""
+  enableSPA: true
+  enablePopovers: true
+  analytics: null
+  locale: en-US
+  baseUrl: dlarsen5.github.io/blog-host-trial-quartz
+  ignorePatterns: [private, templates, .obsidian]
+  theme:
+    fontOrigin: local
+    cdnCaching: false
+    typography:
+      header: JetBrains Mono NL
+      body: JetBrains Mono NL
+      code: JetBrains Mono NL
+    colors:
+      lightMode: &palette
+        light: var(--surface-0)
+        lightgray: var(--line)
+        gray: var(--ink-muted)
+        darkgray: var(--ink)
+        dark: var(--ink-bright)
+        secondary: var(--ink)
+        tertiary: var(--ink-bright)
+        highlight: var(--surface-1)
+        textHighlight: var(--selection)
+      darkMode: *palette
+plugins:
+  - source: '@quartz-community/created-modified-date'
+    enabled: true
+    options:
+      defaultDateType: created
+      priority: [frontmatter, git, filesystem]
+    order: 10
+  - source: '@quartz-community/syntax-highlighting'
+    enabled: true
+    options:
+      theme: { light: github-light, dark: github-dark }
+      keepBackground: false
+    order: 20
+  - source: '@quartz-community/obsidian-flavored-markdown'
+    enabled: true
+    options: { enableInHtmlEmbed: false }
+    order: 30
+  - source: '@quartz-community/github-flavored-markdown'
+    enabled: true
+    order: 40
+  - source: '@quartz-community/crawl-links'
+    enabled: true
+    options: { markdownLinkResolution: shortest }
+    order: 60
+  - source: '@quartz-community/description'
+    enabled: true
+    order: 70
+  - source: '@quartz-community/latex'
+    enabled: true
+    options: { renderEngine: katex }
+    order: 80
+  - source: '@quartz-community/remove-draft'
+    enabled: true
+  - source: '@quartz-community/alias-redirects'
+    enabled: true
+  - source: '@quartz-community/content-index'
+    enabled: true
+    options: { enableSiteMap: true, enableRSS: true }
+  - source: '@quartz-community/favicon'
+    enabled: true
+  - source: '@quartz-community/content-page'
+    enabled: true
+  - source: '@quartz-community/folder-page'
+    enabled: true
+  - source: '@quartz-community/tag-page'
+    enabled: true
+  - source: '@quartz-community/article-title'
+    enabled: true
+    layout: { position: beforeBody, priority: 10 }
+  - source: '@quartz-community/tag-list'
+    enabled: true
+    layout: { position: beforeBody, priority: 30 }
+  - source: '@quartz-community/page-title'
+    enabled: true
+    layout: { position: left, priority: 10 }
+  - source: '@quartz-community/explorer'
+    enabled: true
+    layout: { position: left, priority: 50 }
+  - source: '@quartz-community/search'
+    enabled: true
+    layout: { position: left, priority: 30 }
+  - source: '@quartz-community/table-of-contents'
+    enabled: true
+    layout: { position: right, priority: 30 }
+  - source: '@quartz-community/backlinks'
+    enabled: true
+    layout: { position: right, priority: 50 }
+  - source: '@quartz-community/comments'
+    enabled: true
+    options:
+      provider: giscus
+      options:
+        repo: dlarsen5/blog-host-trial-quartz
+        repoId: R_kgDOVjHCLA
+        category: Announcements
+        categoryId: DIC_kwDOVjHCLM4DKZP0
+        mapping: pathname
+        themeUrl: https://giscus.app/themes
+        lightTheme: noborder_light
+        darkTheme: noborder_dark
+    layout: { position: afterBody, priority: 10 }
+  - source: '@quartz-community/footer'
+    enabled: true
+    options:
+      links:
+        source: https://github.com/dlarsen5/blog-host-trial-quartz
+        rss: https://dlarsen5.github.io/blog-host-trial-quartz/index.xml
+    layout: { position: footer, priority: 50 }
