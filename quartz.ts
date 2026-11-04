@@ -1,5 +1,6 @@
 import { loadQuartzConfig, loadQuartzLayout } from "./quartz/plugins/loader/config-loader"
 import { ThemeSwitcher, TrialMetadata } from "./quartz/components/Trial"
+import { PageTypeDispatcher } from "./quartz/plugins/pageTypes"
 
 const config = await loadQuartzConfig()
 // Quartz expects a scheme-free baseUrl. Accept ordinary preview/deployment URLs too.
@@ -9,3 +10,6 @@ export default config
 export const layout = await loadQuartzLayout()
 layout.defaults.header = [ThemeSwitcher]
 layout.defaults.beforeBody = [...(layout.defaults.beforeBody ?? []), TrialMetadata]
+const dispatcher = config.plugins.emitters.findIndex((emitter) => emitter.name === "PageTypeDispatcher")
+if (dispatcher < 0) throw new Error("Quartz page dispatcher not found")
+config.plugins.emitters[dispatcher] = PageTypeDispatcher(layout)

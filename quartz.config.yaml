@@ -27,6 +27,10 @@ configuration:
         textHighlight: var(--selection)
       darkMode: *palette
 plugins:
+  - source: '@quartz-community/note-properties'
+    enabled: true
+    options: { hidePropertiesView: true }
+    order: 0
   - source: '@quartz-community/created-modified-date'
     enabled: true
     options:
