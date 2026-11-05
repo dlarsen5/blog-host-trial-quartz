@@ -4,12 +4,14 @@ The blog at https://blog.neutronuniverse.com/, built with Quartz 5.0.0 (upstream
 
 ## Content
 
-`content/` is generated from the owner's Obsidian vault by `scripts/sync_published.py` in the parent repo (`~/Git/blog_host_trial`); don't edit it here. It copies what Obsidian Publish serves at neutronuniverse.com:
+`content/` is generated from the owner's Obsidian vault by `scripts/sync_published.py` in the parent repo (`~/Git/blog_host_trial`); don't edit it here. It copies what Obsidian Publish serves at neutronuniverse.com, plus new posts:
 - `Published/Home.md` becomes the home page.
-- Everything under `Published/Projects/` is copied with its attachments.
+- Notes at the top of `Published/` named `MM-DD-YY Title.md` are copied; that's where a finished draft is moved.
+- Everything under `Published/Projects/` is copied with its attachments. Images for a new post go in `Published/Projects/attachments/`.
 - `books.md` is rendered text-only from the vault `Books/` notes (no publisher covers).
+- A note with `publish: false` is skipped.
 
-Notes named `MM-DD-YY Title` are posts: the sync gives them `title` and `published` frontmatter. Posts appear in the home page list and the RSS feed, with their full text, and get a comment box. Every other page is `unlisted`, so it stays out of the feed but can still be reached by link.
+Notes named `MM-DD-YY Title` are posts: the sync gives them `title` and `published` frontmatter unless they set them. Posts appear in the home page list and the RSS feed, with their full text, and get a comment box. Every other page is `unlisted`, so it stays out of the feed but can still be reached by link.
 
 ## Build and deploy
 
