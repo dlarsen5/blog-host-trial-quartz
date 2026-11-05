@@ -1,11 +1,11 @@
 configuration:
-  pageTitle: Neutron Universe (TEST)
+  pageTitle: Neutron Universe
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: false
   analytics: null
   locale: en-US
-  baseUrl: dlarsen5.github.io/blog-host-trial-quartz
+  baseUrl: blog.neutronuniverse.com
   ignorePatterns: [private, templates, .obsidian]
   theme:
     fontOrigin: local
@@ -34,7 +34,7 @@ plugins:
   - source: '@quartz-community/created-modified-date'
     enabled: true
     options:
-      defaultDateType: created
+      defaultDateType: published
       priority: [frontmatter, git, filesystem]
     order: 10
   - source: '@quartz-community/syntax-highlighting'
@@ -61,22 +61,24 @@ plugins:
     enabled: true
     options: { renderEngine: katex }
     order: 80
+  - source: '@quartz-community/unlisted-pages'
+    enabled: true
   - source: '@quartz-community/remove-draft'
     enabled: true
   - source: '@quartz-community/alias-redirects'
     enabled: true
   - source: '@quartz-community/content-index'
     enabled: true
-    options: { enableSiteMap: true, enableRSS: true }
+    options: { enableSiteMap: true, enableRSS: true, rssFullHtml: true, rssLimit: 50 }
   - source: '@quartz-community/favicon'
     enabled: true
   - source: '@quartz-community/content-page'
     enabled: true
   - source: '@quartz-community/folder-page'
-    enabled: true
+    enabled: false
   - source: '@quartz-community/article-title'
     enabled: true
-    layout: { position: beforeBody, priority: 10 }
+    layout: { position: beforeBody, priority: 10, condition: not-index }
   - source: '@quartz-community/comments'
     enabled: true
     options:
@@ -89,4 +91,4 @@ plugins:
         mapping: pathname
         lightTheme: solar-day
         darkTheme: solar-night
-    layout: { position: afterBody, priority: 10 }
+    layout: { position: afterBody, priority: 10, condition: post }
