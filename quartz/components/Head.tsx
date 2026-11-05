@@ -43,8 +43,8 @@ export default (() => {
       <head>
         <title>{title}</title>
         <meta charSet="utf-8" />
-        <link rel="stylesheet" href={joinSegments(baseDir, "static/ntrn/src/tech/css/tokens.css")} />
-        <script src={joinSegments(baseDir, "static/ntrn-switcher.js")} spa-preserve></script>
+        <link rel="stylesheet" href={joinSegments(baseDir, "static/ntrn/src/solar-house/css/tokens.css")} />
+        <script src={joinSegments(baseDir, "static/ntrn-daylight.js")} spa-preserve></script>
         {coreStylesheet && <link rel="preload" href={coreStylesheet} as="style" />}
         {coreScript && coreScript.contentType === "external" && (
           <link rel="preload" href={coreScript.src} as="script" />

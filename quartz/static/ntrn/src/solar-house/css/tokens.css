@@ -1,0 +1,101 @@
+/* NTRN Solar House v4.0.0 — generated from tokens/tokens.json. Do not edit; change tokens.json and regenerate. */
+@font-face { font-family: 'JetBrains Mono NL'; src: url('../../core/fonts/JetBrainsMonoNL-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'JetBrains Mono NL'; src: url('../../core/fonts/JetBrainsMonoNL-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Fraunces'; src: url('../../core/fonts/Fraunces-Variable-latin.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+:root, [data-theme="day"] {
+  --surface-0: #f3f1ea;
+  --surface-1: #ebe8df;
+  --surface-2: #faf9f5;
+  --selection: #dce7ec;
+  --line: #d6d3c8;
+  --line-strong: #76837f;
+  --ink: #16241c;
+  --ink-bright: #0b140f;
+  --ink-muted: #4d5c52;
+  --inverse: #16241c;
+  --on-inverse: #f8f7f2;
+  --focus: #0b140f;
+  --atmos: #55748b;
+  --atmos-dim: #a7bac8;
+  --sun: #b07304;
+  --sun-ink: #7a5200;
+  --water: #1f6f8b;
+  --soil: #a8492a;
+  --life: #276b35;
+  --alarm: #a8180e;
+  --alarm-bg: #f6dcd8;
+  --on-alarm: #ffffff;
+  --glass: rgba(255,255,255,0.62);
+  --glass-edge: rgba(255,255,255,0.9);
+  --ghost: rgba(22,36,28,0.18);
+}
+[data-theme="night"] {
+  --surface-0: #0e1a1f;
+  --surface-1: #13232a;
+  --surface-2: #182b33;
+  --selection: #22404a;
+  --line: #24373e;
+  --line-strong: #6f8c91;
+  --ink: #e8f1ee;
+  --ink-bright: #f6fbf9;
+  --ink-muted: #9db2b0;
+  --inverse: #e8f1ee;
+  --on-inverse: #0e1a1f;
+  --focus: #f6fbf9;
+  --atmos: #cfe9ff;
+  --atmos-dim: #4f6b7e;
+  --sun: #ffcc4d;
+  --sun-ink: #ffd77a;
+  --water: #4fc3d6;
+  --soil: #e09670;
+  --life: #8fd46a;
+  --alarm: #ff8a80;
+  --alarm-bg: #3d2322;
+  --on-alarm: #0e1a1f;
+  --glass: rgba(14,26,31,0.62);
+  --glass-edge: rgba(207,233,255,0.28);
+  --ghost: rgba(232,241,238,0.20);
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-16: 64px;
+  --row-y: 6px;
+  --control-h: 30px;
+  --measure: 560px;
+  --radius-0: 0;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --rule-1: 1px;
+  --rule-2: 2px;
+  --dur-line: 70ms;
+  --dur-blink: 530ms;
+  --dur-hold: 1500ms;
+  --dur-flash: 120ms;
+  --dur-beat: 414ms;
+  --dur-orbit: 2400ms;
+  --dur-flow: 1400ms;
+  --dur-rotor: 2000ms;
+  --dur-daylight: 60000ms;
+  --texture: 0.12;
+  --font-mono: "JetBrains Mono NL", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-display: Fraunces, "Iowan Old Style", Georgia, serif;
+  --font-voice: Fraunces, "Iowan Old Style", Georgia, serif;
+  --font-data: var(--font-mono);
+  --font-text: var(--font-data);
+}
+.t-hero { font-family: var(--font-display); font-size: 64px; line-height: 64px; font-weight: 420; letter-spacing: -0.02em; }
+.t-display { font-family: var(--font-display); font-size: 32px; line-height: 38px; font-weight: 400; }
+.t-title { font-family: var(--font-display); font-size: 20px; line-height: 26px; font-weight: 450; }
+.t-voice { font-family: var(--font-display); font-size: 16px; line-height: 24px; font-weight: 360; }
+.t-heading { font-family: var(--font-mono); font-size: 14px; line-height: 20px; font-weight: 500; }
+.t-body { font-family: var(--font-mono); font-size: 13px; line-height: 20px; font-weight: 400; }
+.t-label { font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 400; }
+.t-stencil { font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; }
+.t-caption { font-family: var(--font-mono); font-size: 11px; line-height: 16px; font-weight: 400; }

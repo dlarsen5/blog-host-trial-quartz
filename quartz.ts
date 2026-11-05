@@ -1,5 +1,5 @@
 import { loadQuartzConfig, loadQuartzLayout } from "./quartz/plugins/loader/config-loader"
-import { ThemeSwitcher, TrialMetadata } from "./quartz/components/Trial"
+import { SiteHeader, DateLine } from "./quartz/components/Trial"
 import { PageTypeDispatcher } from "./quartz/plugins/pageTypes"
 
 const config = await loadQuartzConfig()
@@ -8,8 +8,11 @@ config.configuration.baseUrl = (process.env.BASE_URL ?? "dlarsen5.github.io/blog
   .replace(/^https?:\/\//, "").replace(/\/$/, "")
 export default config
 export const layout = await loadQuartzLayout()
-layout.defaults.header = [ThemeSwitcher]
-layout.defaults.beforeBody = [...(layout.defaults.beforeBody ?? []), TrialMetadata]
+layout.defaults.header = [SiteHeader]
+layout.defaults.beforeBody = [...(layout.defaults.beforeBody ?? []), DateLine]
+for (const pageType of ["content", "folder"]) {
+  layout.byPageType[pageType] = { ...layout.byPageType[pageType], frame: "full-width" }
+}
 const dispatcher = config.plugins.emitters.findIndex((emitter) => emitter.name === "PageTypeDispatcher")
 if (dispatcher < 0) throw new Error("Quartz page dispatcher not found")
 config.plugins.emitters[dispatcher] = PageTypeDispatcher(layout)

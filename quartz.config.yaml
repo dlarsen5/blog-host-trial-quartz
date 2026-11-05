@@ -1,8 +1,8 @@
 configuration:
-  pageTitle: TEST hosting trial
+  pageTitle: Neutron Universe (TEST)
   pageTitleSuffix: ""
   enableSPA: true
-  enablePopovers: true
+  enablePopovers: false
   analytics: null
   locale: en-US
   baseUrl: dlarsen5.github.io/blog-host-trial-quartz
@@ -11,8 +11,8 @@ configuration:
     fontOrigin: local
     cdnCaching: false
     typography:
-      header: JetBrains Mono NL
-      body: JetBrains Mono NL
+      header: Fraunces
+      body: -apple-system
       code: JetBrains Mono NL
     colors:
       lightMode: &palette
@@ -21,8 +21,8 @@ configuration:
         gray: var(--ink-muted)
         darkgray: var(--ink)
         dark: var(--ink-bright)
-        secondary: var(--ink)
-        tertiary: var(--ink-bright)
+        secondary: var(--ink-bright)
+        tertiary: var(--atmos)
         highlight: var(--surface-1)
         textHighlight: var(--selection)
       darkMode: *palette
@@ -74,29 +74,9 @@ plugins:
     enabled: true
   - source: '@quartz-community/folder-page'
     enabled: true
-  - source: '@quartz-community/tag-page'
-    enabled: true
   - source: '@quartz-community/article-title'
     enabled: true
     layout: { position: beforeBody, priority: 10 }
-  - source: '@quartz-community/tag-list'
-    enabled: true
-    layout: { position: beforeBody, priority: 30 }
-  - source: '@quartz-community/page-title'
-    enabled: true
-    layout: { position: left, priority: 10 }
-  - source: '@quartz-community/explorer'
-    enabled: true
-    layout: { position: left, priority: 50 }
-  - source: '@quartz-community/search'
-    enabled: true
-    layout: { position: left, priority: 30 }
-  - source: '@quartz-community/table-of-contents'
-    enabled: true
-    layout: { position: right, priority: 30 }
-  - source: '@quartz-community/backlinks'
-    enabled: true
-    layout: { position: right, priority: 50 }
   - source: '@quartz-community/comments'
     enabled: true
     options:
@@ -107,14 +87,6 @@ plugins:
         category: Announcements
         categoryId: DIC_kwDOVjHCLM4DKZP0
         mapping: pathname
-        themeUrl: https://giscus.app/themes
-        lightTheme: noborder_light
-        darkTheme: noborder_dark
+        lightTheme: solar-day
+        darkTheme: solar-night
     layout: { position: afterBody, priority: 10 }
-  - source: '@quartz-community/footer'
-    enabled: true
-    options:
-      links:
-        source: https://github.com/dlarsen5/blog-host-trial-quartz
-        rss: https://dlarsen5.github.io/blog-host-trial-quartz/index.xml
-    layout: { position: footer, priority: 50 }
